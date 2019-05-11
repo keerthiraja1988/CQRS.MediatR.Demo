@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CQRS.MediatR.Application.Employee.Command.CreateEmployee
 {
-    public class CreateEmployeeCommand : IRequest<int>
+    public class CreateEmployeeCommand : IRequest<int>, INotification
     {
         public int EmployeeId { get; set; }
 

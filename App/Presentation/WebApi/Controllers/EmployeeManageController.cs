@@ -49,10 +49,11 @@ namespace WebApi.Controllers
         [HttpPost]
         public async Task<ActionResult<int>> Post([FromBody] CreateEmployeeCommand createEmployeeCommand)
         {
+            // var employeeId = await this._mediator.Send(createEmployeeCommand);
             var employeeId = await this._mediator.Send(createEmployeeCommand);
 
             return Ok(employeeId);
-        }             
+        }
 
         // PUT: api/EmployeeManage/5
         [HttpPut("{employeeId}")]
@@ -62,7 +63,7 @@ namespace WebApi.Controllers
             await this._mediator.Send(updateEmployeeCommand);
             return Ok();
         }
-        
+
         // DELETE: api/products/5
         [HttpDelete("{employeeId}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
